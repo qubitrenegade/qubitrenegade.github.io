@@ -4,7 +4,7 @@ title:  "Boot..."
 date:   2018-01-24 00:25:29 -0700
 categories: start
 ---
-{% highlight ruby %}
+{% highlight bash %}
     Jan 21 12:54:53 local systemd[1]: Mounting /sysroot...
     Jan 21 12:54:53 local systemd[1]: Mounted /sysroot.
     Jan 21 12:54:53 local systemd[1]: Reached target Initrd Root File System.
