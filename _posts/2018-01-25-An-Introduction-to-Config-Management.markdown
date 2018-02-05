@@ -2,7 +2,7 @@
 layout: post
 title:  "Chef? An introduction to Configuration Management"
 date:   2018-01-25 12:03:29 -0700
-categories: Intro Chef
+Categories: Chef Intro
 ---
 
 ## Introduction
