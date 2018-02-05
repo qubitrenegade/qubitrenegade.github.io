@@ -30,6 +30,7 @@ theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
   - jekyll-gist
+  - jekyll-seo-tag
   - jekyll_inline_highlight
 
 # Exclude from processing.

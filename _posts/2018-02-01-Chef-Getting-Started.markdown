@@ -17,11 +17,11 @@ Head on over to the [Sign Up Page](https://manage.chef.io/signup) to get signed 
 
 ### Knife Setup
 
-Head over to [The Organizations page](https://manage.chef.io/organizations/) in your manage interface (Administration -> Organizations).  Find your organization, and select "Generate Knife Config".  You should download a {% ihighlight bash %}knife.rb{% endihighlight %} file.
+Head over to [The Organizations page](https://manage.chef.io/organizations/) in your manage interface (Administration -> Organizations).  Find your organization, and select "Generate Knife Config".  You should download a `knife.rb` file.
 
-Then head over to Users (Administration -> Users) and find your user, then select "Reset Key".  You should download a {% ihighlight bash %} <username>.pem {% endihighlight %} file.
+Then head over to Users (Administration -> Users) and find your user, then select "Reset Key".  You should download a ` <username>.pem ` file.
 
-Create a {% ihighlight bash %} ~/.chef {% endihighlight %} directory, and move your newly downloaded files into the {% ihighlight bash %} ~/.chef {% endihighlight %} directory.
+Create a ` ~/.chef ` directory, and move your newly downloaded files into the ` ~/.chef ` directory.
 
 {% highlight bash %}
 $ mkdir ~/.chef
@@ -30,7 +30,7 @@ $ mv ~/Downloads/{knife.rb,qubitrenegade.pem} ~/.chef
 
 ### Knife.rb file
 
-Your {% ihighlight bash %}knife.rb{% endihighlight %} will look like
+Your `knife.rb` will look like
 
 {% highlight ruby %}
 # See http://docs.chef.io/config_rb_knife.html for more information on knife configuration options
@@ -46,7 +46,7 @@ cookbook_path            ["#{current_dir}/../cookbooks"]
 
 ## ChefDK Install
 
-This guide assumes you're not doing other Ruby development.  If you use bundler and things get weird (Chef can't find gems that are installed when you {% ihighlight bash %}gem list{% endihighlight %}), you can remove the {% ihighlight bash %}~/.chefdk/gems{% endihighlight %}  directory.
+This guide assumes you're not doing other Ruby development.  If you use bundler and things get weird (Chef can't find gems that are installed when you `gem list`), you can remove the `~/.chefdk/gems`  directory.
 
 ### Download ChefDK
 
@@ -191,14 +191,14 @@ $ sudo usermod -aG docker $USER
 
 ## First cookbook
 
-I like to do my work in my {% ihighlight bash %}~/chef-dev{% endihighlight %} directory.  So let's create this first.
+I like to do my work in my `~/chef-dev` directory.  So let's create this first.
 
 {% highlight bash %}
 $ mkdir ~/chef-dev
 $ cd ~/chef-dev
 {% endhighlight %}
 
-Then we'll create our first cookbook, this can be found on [github](https://github.com/qubitrenegade/my_test), but it's not much more than a base {% ihighlight bash %}chef generate cookbook <cookbook name>{% endihighlight %}.
+Then we'll create our first cookbook, this can be found on [github](https://github.com/qubitrenegade/my_test), but it's not much more than a base `chef generate cookbook <cookbook name>`.
 
 {% highlight bash %}
 $ chef generate cookbook my_test
@@ -207,7 +207,7 @@ $ cd my_test
 
 ### Running Test Kitchen
 
-At this point, we should be in our new cookbook directory, and be able to run {% ihighlight bash %}kitchen test{% endihighlight %}, but I'm having trouble and didn't want to reboot at the moment...
+At this point, we should be in our new cookbook directory, and be able to run `kitchen test`, but I'm having trouble and didn't want to reboot at the moment...
 
 So more on this later,
 
@@ -217,7 +217,7 @@ At this point, we should have:
 
 * installed the ChefDK, 
 * installed Docker, 
-* Configured our {% ihighlight bash %}knife.rb{% endihighlight %}
+* Configured our `knife.rb`
 * created our first cookbook using the ChefDK generator
 * Run Test Kitchen
 
