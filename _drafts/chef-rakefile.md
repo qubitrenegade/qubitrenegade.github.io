@@ -108,7 +108,7 @@ Personally, I like to have the cop names displayed when I run rubocop, so we tak
 
 Then when we run `rake -T` we get:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ rake -T
 rake rubocop               # Run RuboCop
 rake rubocop:auto_correct  # Auto-correct RuboCop offenses
@@ -132,7 +132,7 @@ First we again require the library.  Then we initialize the FoodCritic tasks.  A
 
 Now we should have:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ rake -T
 rake foodcritic            # Lint Chef cookbooks
 rake rubocop               # Run RuboCop
@@ -153,7 +153,7 @@ end
 
 And now we should have one more rake task:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ rake -T
 rake foodcritic            # Lint Chef cookbooks
 rake rubocop               # Run RuboCop
@@ -172,7 +172,7 @@ Kitchen::RakeTasks.new
 
 We don't really have any options to change, so we just call "new".  Now we have something along the lines of:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ rake -T
 rake foodcritic                   # Lint Chef cookbooks
 rake kitchen:all                  # Run all test instances
@@ -202,7 +202,7 @@ task test: [:style, :spec]
 
 This gives us a few new commands that will call the various linters and test tools for us directly.  You should have something like:
 
-{% highlight ruby %}
+{% highlight bash %}
 $ rake -T
 rake all                          # Run all tests
 rake foodcritic                   # Lint Chef cookbooks
@@ -214,7 +214,7 @@ rake rubocop:auto_correct         # Auto-correct RuboCop offenses
 rake spec                         # Run RSpec code examples
 rake style                        # Run Rubocop and Foodcritic style checks
 rake test                         # Run all style checks and unit tests
-{% highlight %}
+{% endhighlight %}
 
 ## Final Form
 
