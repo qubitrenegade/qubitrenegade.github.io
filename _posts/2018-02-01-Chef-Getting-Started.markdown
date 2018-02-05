@@ -46,7 +46,7 @@ cookbook_path            ["#{current_dir}/../cookbooks"]
 
 ## ChefDK Install
 
-This guide assumes you're not doing other Ruby development.  If you use bundler and things get weird (Chef can't find gems that are installed when you {%ihighlight%}gem list{% endihighlight %}), you can remove the {% ihighlight %}~/.chefdk/gems{% endihighlight %}  directory.
+This guide assumes you're not doing other Ruby development.  If you use bundler and things get weird (Chef can't find gems that are installed when you {% ihighlight %}gem list{% endihighlight %}), you can remove the {% ihighlight %}~/.chefdk/gems{% endihighlight %}  directory.
 
 ### Download ChefDK
 
