@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "ChefDK: Rakefile for common tasks"
-# date:   2018-02-01 12:13:57 -0700
+date:   2018-02-07 12:08:21 -0700
 categories: Chef ChefDK
 ---
 
 ## Introduction
 
-Good practice is to run rubocop, foodcritic, and ChefSpec (rspec) tests before pushing your changes, as we've [talked about before]().
+Good practice is to run rubocop, foodcritic, and ChefSpec (rspec) tests, and test kitchen before pushing your changes, as we've [talked about before]().
 
 And it's really not THAT much to type every time to go:
 
@@ -18,9 +18,10 @@ $ rubocop -a
 $ foodcritic
 $ foodcritic . # I always forget the dot...
 $ rspec --color -f d
+$ kitchen test
 {% endhighlight %}
 
-But wouldn't it be nice to just have one command to type?
+But wouldn't it be nice to automate this, so we just have one command to type?
 
 Actually, you can now do that with `delivery` locally.  But that comes with some other considerations which deserves its own post.
 
