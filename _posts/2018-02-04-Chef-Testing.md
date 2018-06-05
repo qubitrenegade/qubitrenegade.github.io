@@ -61,7 +61,7 @@ Now we've automated validation of our "get_milk" function.  If we make a change 
 
 ## Types of Testing
 
-You know, I'd like to blame marketing, and I do... Cloud... Serverles... but we did this one to ourselves.  This of course isn't an exhaustive list...
+You know, I'd like to blame marketing, and I do... Cloud... Serverless... but we did this one to ourselves.  This of course isn't an exhaustive list...
 
 * Unit - "Does our code have the artifacts I expect, do they behave how I expect?"
 * Lint - "Does our code meet style guidelines?"
@@ -85,14 +85,14 @@ Not all of this is going to happen locally.  E.g.: quality testing can take a lo
 
 [RuboCop](https://github.com/bbatsov/rubocop) is Ruby's Style Cop.  It has a [TON](https://github.com/bbatsov/rubocop/blob/master/config/default.yml) of configurable options that can be set with a local .rubocop.yml file.  
 
-Consistency is crediblity, so by ensuring you maintain a consistent style, others (or yourself 6mos from now) will be able to pick your code with greater ease.
+Consistency is credibility, so by ensuring you maintain a consistent style, others (or yourself 6mos from now) will be able to pick your code with greater ease.
 
-It's worth calling out there is now (2 years old) a [CookStyle](https://github.com/chef/cookstyle) which seems to set sane defaults and warrents further investigation.
+It's worth calling out there is now (2 years old) a [CookStyle](https://github.com/chef/cookstyle) which seems to set sane defaults and warrants further investigation.
 
 Some settings I like to include in my .rubocop.yml
 
 {% highlight ruby %}
-# 80 it WAY to shoort
+# 80 it WAY to short
 Metrics/LineLength:
   Max: 120
 
@@ -131,8 +131,8 @@ Test Kitchen is a whole topic unto itself.  The short version is, it automates t
 
 Allows you to automate validation of your Cookbook.  "I expect my cookbook to create /etc/httpd/my-site.conf, with the string qubitrenegade.com"
 
-Annie Hedgpeth wrote an amazing [tutorial on InSpec](http://www.anniehedgie.com/inspec/).  Seriously, go read it.  It will change your life.  It's the difinitive guide.
+Annie Hedgpeth wrote an amazing [tutorial on InSpec](http://www.anniehedgie.com/inspec/).  Seriously, go read it.  It will change your life.  It's the definitive guide.
 
 ## Conclusion
 
-If we run our RuboCop, FoodCritic, ChefSpec, and Test Kitche, we can be more confident that our code will do what we expect "in the wild".  By writing our tests first we give ourself a check list of features our code needs to have, which enables us to form and execute a plan, instead of meandering through our code.  All of this helps us save time because we're no longer waiting for long build processes to find simple syntax errors we can be finding locally.
+If we run our RuboCop, FoodCritic, ChefSpec, and Test Kitchen, we can be more confident that our code will do what we expect "in the wild".  By writing our tests first we give our self a check list of features our code needs to have, which enables us to form and execute a plan, instead of meandering through our code.  All of this helps us save time because we're no longer waiting for long build processes to find simple syntax errors we can be finding locally.

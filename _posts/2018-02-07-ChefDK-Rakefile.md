@@ -44,7 +44,7 @@ task :reticulate_splines do
 end
 {% endhighlight %}
 
-Then we can run it.  Also we can run rake with the `-T` flag to see all tasks avilable.
+Then we can run it.  Also we can run rake with the `-T` flag to see all tasks available.
 
 {% highlight bash %}
 $ rake -T
@@ -53,7 +53,7 @@ $ rake
 Reticulating Splines...
 {% endhighlight %}
 
-This isn't very useful, but is a good structure to show the basicas of a Rakefile.
+This isn't very useful, but is a good structure to show the basics of a Rakefile.
 
 ### Rakefile explanation
 
@@ -67,7 +67,7 @@ The first line describes the default task.  This is the task that will be run wh
 desc 'Reticulate splines'
 {% endhighlight %}
 
-The next line is the description of the task.  The `desc` function call must preceede a `task` block.
+The next line is the description of the task.  The `desc` function call must precede a `task` block.
 
 {% highlight ruby %}
 task :reticulate_splines do

@@ -7,7 +7,7 @@ categories: Chef Intro
 
 ## Introduction
 
-This does not intend to be a replacement for the tutorials on the [Chef Website](https://learn.chef.io/).  In fact, I higly recommend reading and working through those tutorials as this blog intends to build on ideas and concepts presented there.  In fact, most of this guide is based on the [Chef Tutorial](https://learn.chef.io/modules/manage-a-node-chef-server/ubuntu/bring-your-own-system/set-up-your-workstation#/) and [Documentation](https://docs.chef.io/workstation.html) on the same subject.
+This does not intend to be a replacement for the tutorials on the [Chef Website](https://learn.chef.io/).  In fact, I highly recommend reading and working through those tutorials as this blog intends to build on ideas and concepts presented there.  In fact, most of this guide is based on the [Chef Tutorial](https://learn.chef.io/modules/manage-a-node-chef-server/ubuntu/bring-your-own-system/set-up-your-workstation#/) and [Documentation](https://docs.chef.io/workstation.html) on the same subject.
 
 This page exists to document my workflows.  So without further ado.
 
@@ -154,7 +154,7 @@ echo '{"ssl":{"verify": false }}' > ~/.berkshelf/config.json
 
 ## Docker
 
-This should not be seen as condoning the use of docker in production!  However, for the purposes of the next few posts, it will serve our needs.  Again, this post mostly just follows the instructions found in the [offical documentation](https://docs.docker.com/install/linux/docker-ce/fedora/)
+This should not be seen as condoning the use of docker in production!  However, for the purposes of the next few posts, it will serve our needs.  Again, this post mostly just follows the instructions found in the [official documentation](https://docs.docker.com/install/linux/docker-ce/fedora/)
 
 {% highlight bash %}
 # Remove old versions of Docker
@@ -221,6 +221,6 @@ At this point, we should have:
 * created our first cookbook using the ChefDK generator
 * Run Test Kitchen
 
-We're now ready to rock!  Tune in next time when we discuss the coobkook development process.
+We're now ready to rock!  Tune in next time when we discuss the cookbook development process.
 
 - Q

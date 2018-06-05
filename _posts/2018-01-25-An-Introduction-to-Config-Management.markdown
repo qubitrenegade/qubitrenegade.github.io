@@ -47,7 +47,7 @@ It wasn't all roses.  There were a number of growing pains, but one thing Chef h
 
 ### The Difference
 
-For me, the difference has always been the ecosystem and the tools.  We have [ChefSpec](http://chefspec.github.io/chefspec/) for that immediate TDD feedback loop.  What's the best way to see if your code works?  Run it!  To that end we have [Test Kitchen](https://kitchen.ci/), which automates creating an instance, running your Cookbook (in keeping with the motif), and running your automated validation tests.  We leverage [InSpec](https://www.inspec.io/) to do our testing, which we can then also leverage for compliance validation, so we can start validating the security configs/applications/etc earier in the process.  Not to mention [Top Notch Tutorials](https://learn.chef.io/).
+For me, the difference has always been the ecosystem and the tools.  We have [ChefSpec](http://chefspec.github.io/chefspec/) for that immediate TDD feedback loop.  What's the best way to see if your code works?  Run it!  To that end we have [Test Kitchen](https://kitchen.ci/), which automates creating an instance, running your Cookbook (in keeping with the motif), and running your automated validation tests.  We leverage [InSpec](https://www.inspec.io/) to do our testing, which we can then also leverage for compliance validation, so we can start validating the security configs/applications/etc earlier in the process.  Not to mention [Top Notch Tutorials](https://learn.chef.io/).
 
 ## Conclusion
 
