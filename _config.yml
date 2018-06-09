@@ -16,7 +16,7 @@
 title: Qubit Renegade
 email: qubitrenegade@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Cookin' up some awesome...
+  Current status - breaking things.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://qubitrenegade.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: qubitrenegade
