@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Habitat & Consul: Gossip: You won't believe the dirt!"
+title:  "Habitat and Consul: client mode and registering services"
 date:   2018-06-05 23:29:47 -0700
 categories: Habitat Consul Docker
 ---
