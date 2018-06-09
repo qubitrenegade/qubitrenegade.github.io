@@ -26,7 +26,7 @@ Today we'll explore running Consul in "client" mode.
 
 ## Justification
 
-Initially, I wanted to have the ability to run `core/consul` in either "Client" or "Server" mode.  The primary difference is that Consul "Servers" participate in gossip and present a Web UI.  Technically the client could present a Web UI.  When running other services (Vault, Nomad, etc. which we'll touch on in a later post), HashiCorp recommends running Consul in client mode locally and not allowing the tools to communicate directly with the consul server.
+Initially, I wanted to have the abilit to run `core/consul` in either "Client" or "Server" mode.  The primary difference is that Consul "Servers" participate in gossip and present a Web UI.  Technically the client could present a Web UI.  When running other services (Vault, Nomad, etc. which we'll touch on in a later post), Hashicorp recommends running Consul in client mode locally and not allowing the tools to communicate directly with the consul server.
 
 When discussing Consul, we speak about "Server" and "Client" mode; even though it's the same binary run with different CLI parameters, "client" and "server" makes a natural demarcation which lends itself to the segregation of packages.
 
@@ -45,7 +45,7 @@ If you want to just run it, skip to Exporting Consul Client below.
 
 #### Service Config Files
 
-To enable what is essentially "arbitrary" configuration files, we can use the `toJson` helper method to turn the `default.toml`/`user.toml` config into JSON structures.  As Handlebars is fairly limited, there is no "else if" clause, we generate correct JSON and allow Consul to complain about the configuration file.
+To enable what is essentially "arbitrary" configuration files, we can use the `toJson` helper method to turn the `default.toml`/`user.toml` config into JSON structurs.  As Handlebars is fairly limited, there is no "else if" clause, we generate correct JSON and allow Consul to complain about the configuration file.
 
 ```
 {
