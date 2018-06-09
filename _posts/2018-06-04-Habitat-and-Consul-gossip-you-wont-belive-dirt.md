@@ -50,17 +50,25 @@ If you're not in a Linux environment, you'll need to enter the habitat studio:
 
 #### Export `core/consul`
 
+Run the `hab pkg` command to export `core/consul` to a docker container.
+
+```$ hab pkg export docker core/consul
+```
+
+This will create a directory `$(pwd)/results` and a file `$(pwd)/results/last_docker_export.env` which exports a number of environment variables if sourced.  This enables such idioms as `docker run -it $name`.
+
+We will specify the origin and package name in examples below.
 
 #### Run your docker containers:
 
-You will either need to open 3-5 terminal windows, or replace the `-e` with `-de`
+You either need to open three or five terminal windows, or replace the `-e` with `-de` in the examples below.
 
 This also assumes you have no more than one (1) running container before starting this process.  If you have more than one (1) running container, adjust your IPs accordingly.
 
 Run once:
 
 ```
-docker run -e HAB_CONSUL='{ "server": { "beta_ui": true, "bind": "0.0.0.0" }, "client":{"bind": "0.0.0.0"}}' -p 9500:8500 core/consul --peer 172.17.0.3 --topology leader --peer 172.17.0.4
+docker run -e HAB_CONSUL='{ "server": { "beta_ui": true, "bind": "0.0.0.0" }, "client":{"bind": "0.0.0.0"}}' -p 8500:8500 -p 8600:8600/udp core/consul --peer 172.17.0.3 --topology leader --peer 172.17.0.4
 ```
 
 Run thrice (well, 2 or 4 times but actually not specifically not 3 times)
@@ -69,6 +77,6 @@ Run thrice (well, 2 or 4 times but actually not specifically not 3 times)
 docker run -e HAB_CONSUL='{ "server": { "beta_ui": true, "bind": "0.0.0.0" }, "client":{"bind": "0.0.0.0"}}' core/consul --peer 172.17.0.3 --topology leader --peer 172.17.0.4
 ```
 
-now visit [http://localhost:9500](http://localhost:9500)
+Now visit [http://localhost:9500](http://localhost:9500)
 
 you should see 5 nodes!
