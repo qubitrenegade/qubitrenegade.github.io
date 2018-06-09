@@ -18,12 +18,11 @@ categories: Habitat Consul Docker
 * [Habitat](https://www.habitat.sh/docs/install-habitat/)
 * [Docker](https://docs.docker.com/install/) 
 
-You'll need to install them both.  Basically we're going to run a bunch of containers instead of a bunch of servers.  If we were going to push this into production, it doesn't really make sense to run three-five instances of a service on on VM... if that VM dies, then there goes your cluster.  But with Habitat we can basically run the service in any format we want, containers the same way we'd run them if they were individual VMs or being published to a Kubernetes cluster.  Kubernetes expects you to show up to the party with containers ready to go, Habitat is the one who shows up with the kegs in the trunk.
+You'll need to install them both.  Basically we're going to run a bunch of containers instead of a bunch of servers.  If we were going to push this into production, it doesn't really make sense to run three-five instances of a service on on VM... if that VM dies, then there goes your cluster.  But with Habitat we can basically run the service in any format we want, containers the same way we'd run them if they were individual VMs or being published to a Kubernetes cluster.  Kubernetes expects you to show up to the party with containers ready to go, Habitat is the one who comes up with the kegs in the trunk.
 
 ## High level Overview
 
 Habitat needs at least three nodes to form consensus and elect a "leader".  This prevents "split brain" where two nodes both think they are the leader.  Clusters then scale to uneven numbers... 3, 5, 7, etc.  
-
 Consul needs at least three nodes to form consensus and elect a leader... (sound familiar)...
 
 It's definitely easier to bootstrap a Habitat cluster than a Consul cluster.  By leveraging Habitat we can bootstrap a consul cluster more easily...  This is for sure not a "Habitat vs Consul" this is 100% a "Habitat + Consul", I think they are the perfect compliment for each other.
