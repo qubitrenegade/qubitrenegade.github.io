@@ -16,7 +16,7 @@ categories: Habitat Consul Docker
 ## Prerequisites
 
 * [Habitat](https://www.habitat.sh/docs/install-habitat/)
-* [Docker](https://docs.docker.com/install/) 
+* [Docker](https://docs.docker.com/install/)
 
 ## High level Overview
 
@@ -60,10 +60,12 @@ To enable what is essentially "arbitrary" configuration files, we can use the `t
 
 This will allow a minimal configuration such as:
 
+```
 [service]
 name = "foo"
 [service.checks]
 interval = "1s"
+```
 
 Which will generate the JSON:
 
@@ -78,7 +80,6 @@ Which will generate the JSON:
     ]
   }
 }
-
 ```
 
 (just not pretty formatted)
@@ -91,14 +92,16 @@ The Consul Client package is really designed as a building block for other packa
 
 If you're not in a Linux environment, you'll need to enter the habitat studio:
 
-```$ hab studio enter
+```
+$ hab studio enter
 ```
 
 #### Export `qubitrenegade/consul-client`
 
 Run the `hab pkg` command to export `qubitrenegade/consul-client` to a docker container.
 
-```$ hab pkg export docker qubitrenegade/consul-client
+```
+$ hab pkg export docker qubitrenegade/consul-client
 ```
 
 This will create a directory `$(pwd)/results` and a file `$(pwd)/results/last_docker_export.env` which exports a number of environment variables if sourced.  This enables such idioms as `docker run -it $name`.

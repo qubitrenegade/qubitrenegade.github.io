@@ -1,0 +1,84 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "prettier.eslintIntegration": true,
+    "prettier.requireConfig": true,
+    "javascript.format.enable": false,
+    "files.autoSave": "onFocusChange",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "typescript.format.enable": false,
+    "markdown.previewFrontMatter": "show",
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      {
+        "language": "typescript",
+        "autoFix": true
+      },
+      {
+        "language": "typescriptreact",
+        "autoFix": true
+      }
+    ],
+    "editor.formatOnSave": true,
+    "terraform.telemetry.enabled": false,
+    "references.preferredLocation": "view",
+    "editor.suggestSelection": "first",
+    "editor.wordBasedSuggestions": false,
+    "yaml.customTags": [
+      "!And",
+      "!If",
+      "!Not",
+      "!Equals",
+      "!Or",
+      "!FindInMap",
+      "!Base64",
+      "!Cidr",
+      "!Ref",
+      "!Sub",
+      "!GetAtt",
+      "!GetAZs",
+      "!ImportValue",
+      "!Select",
+      "!Split",
+      "!Join"
+    ],
+    "yaml.format.enable": true,
+    "editor.codeLens": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  },
+  "extensions": {
+    "recommendations": [
+      "bierner.markdown-checkbox",
+      "bierner.markdown-emoji",
+      "bierner.markdown-mermaid",
+      "bierner.markdown-yaml-preamble",
+      "bungcip.better-toml",
+      "coenraads.bracket-pair-colorizer",
+      "davidanson.vscode-markdownlint",
+      "dbaeumer.vscode-eslint",
+      "drknoxy.eslint-disable-snippets",
+      "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
+      "foxundermoon.shell-format",
+      "hnw.vscode-auto-open-markdown-preview",
+      "ionutvmi.path-autocomplete",
+      "mgmcdermott.vscode-language-babel",
+      "ramyaraoa.show-offset",
+      "redhat.vscode-yaml",
+      "rust-lang.rust",
+      "shd101wyy.markdown-preview-enhanced",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
+      "tyriar.sort-lines",
+      "yzhang.markdown-all-in-one"
+    ]
+  }
+}
