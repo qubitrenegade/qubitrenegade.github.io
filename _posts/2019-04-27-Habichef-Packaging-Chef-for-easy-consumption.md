@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "HabiChef: Packaging Chef for easy consumption"
-date:   2019-04-07 21:29:47 -0700
-categories: Habitat Consul Docker
+date:   2019-04-27 21:29:47 -0700
+categories: Habitat Consul HabiChef
 ---
 
 Dependencies are hard.  There are many different strategies to attempt to solve this problem.
@@ -278,6 +278,6 @@ habichef_demo.default(O): Chef Client finished, 1/1 resources updated in 01 seco
 
 ## Conclusion
 
-Today we've seen how we can bundle our Chef cookbooks using policy files to set the environment and run list.  The [habichef-skeleton](https://github.com/qubitrenegade/habichef-skeleton) repo contains the basic skeleton we've outlined here.  The [habichef_demo](https://github.com/qubitrenegade/habichef_demo) contains the project we've built here, there is a 2019-04-27 branch and tag.  You can also download and run the [Habitat package](https://bldr.habitat.sh/#/pkgs/qbrd/habichef_demo/latest) with a `hab pkg install qbrd/habichef_demo`.  
+Today we've seen how we can bundle our Chef cookbooks using policy files to set the environment and run list.  The [habichef-skeleton](https://github.com/qubitrenegade/habichef-skeleton) repo contains the basic skeleton we've outlined here.  The [habichef_demo](https://github.com/qubitrenegade/habichef_demo) contains the project we've built here, there is a 2019-04-27 branch and tag.  You can also download and run the [Habitat package](https://bldr.habitat.sh/#/pkgs/qbrd/habichef_demo/latest) with a `hab pkg install qbrd/habichef_demo`.
 
 Tune in next time when we demonstrate adding local cookbooks and applying changes to running environments.
