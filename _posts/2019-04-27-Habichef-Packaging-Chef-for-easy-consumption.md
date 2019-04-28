@@ -2,7 +2,7 @@
 layout: post
 title:  "HabiChef: Packaging Chef for easy consumption"
 date:   2019-04-27 21:29:47 -0700
-categories: Habitat Consul HabiChef
+categories: Habitat Chef HabiChef
 ---
 
 Dependencies are hard.  There are many different strategies to attempt to solve this problem.
