@@ -16,20 +16,20 @@ categories: Habitat Consul Docker
 ## Prerequisites
 
 * [Habitat](https://www.habitat.sh/docs/install-habitat/)
-* [Docker](https://docs.docker.com/install/) 
+* [Docker](https://docs.docker.com/install/)
 
 You'll need to install them both.  Basically we're going to run a bunch of containers instead of a bunch of servers.  If we were going to push this into production, it doesn't really make sense to run three-five instances of a service on on VM... if that VM dies, then there goes your cluster.  But with Habitat we can basically run the service in any format we want, containers the same way we'd run them if they were individual VMs or being published to a Kubernetes cluster.  Kubernetes expects you to show up to the party with containers ready to go, Habitat is the one who comes up with the kegs in the trunk.
 
 ## High level Overview
 
-Habitat needs at least three nodes to form consensus and elect a "leader".  This prevents "split brain" where two nodes both think they are the leader.  Clusters then scale to uneven numbers... 3, 5, 7, etc.  
+Habitat needs at least three nodes to form consensus and elect a "leader".  This prevents "split brain" where two nodes both think they are the leader.  Clusters then scale to uneven numbers... 3, 5, 7, etc.
 Consul needs at least three nodes to form consensus and elect a leader... (sound familiar)...
 
 It's definitely easier to bootstrap a Habitat cluster than a Consul cluster.  By leveraging Habitat we can bootstrap a consul cluster more easily...  This is for sure not a "Habitat vs Consul" this is 100% a "Habitat + Consul", I think they are the perfect compliment for each other.
 
 ## Building Consul
 
-You have multiple choices actually.  That's the whole point!  
+You have multiple choices actually.  That's the whole point!
 
 If you have three (or five!) VMs to run on, you can just install hab on each VM then run:
 
@@ -45,14 +45,16 @@ On to the task at hand:
 
 If you're not in a Linux environment, you'll need to enter the habitat studio:
 
-```$ hab studio enter
+```
+$ hab studio enter
 ```
 
 #### Export `core/consul`
 
 Run the `hab pkg` command to export `core/consul` to a docker container.
 
-```$ hab pkg export docker core/consul
+```
+$ hab pkg export docker core/consul
 ```
 
 This will create a directory `$(pwd)/results` and a file `$(pwd)/results/last_docker_export.env` which exports a number of environment variables if sourced.  This enables such idioms as `docker run -it $name`.
