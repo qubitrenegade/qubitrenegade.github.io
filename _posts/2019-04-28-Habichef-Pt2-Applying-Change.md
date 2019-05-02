@@ -97,6 +97,8 @@ Reason: (ChefDK::LocalPolicyfileLockNotFound) The provided path ./base.lock.json
 
 Well, it seems that something is blowing away the `base.lock.json` file...  This probably needs follow up with the Habitat team.
 
+UPDATE: [#2536](https://github.com/habitat-sh/core-plans/issues/2536) indicates I may have misunderstood the usage pattern.
+
 Regardless, this example starts to break down as you start to deploy to more environments as you have effectively the same package being generated with minor changes.
 
 ## `user.toml` Config Changes
