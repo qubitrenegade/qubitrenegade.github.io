@@ -65,7 +65,7 @@ install vfio-pci /sbin/vfio-pci-override.sh
 
 ## Dracut Config
 
-Create `/etc/dracut.conf.d/vfio.conf` to load our drivers and setup script into our initrd.
+Create `/etc/dracut.conf.d/vfio.conf` to load our drivers and setup script into our initramfs.
 
 ```
 add_drivers+="vfio vfio_iommu_type1 vfio_pci vfio_virqfd"
@@ -81,7 +81,7 @@ Create `/sbin/vfio-pci-override.sh`, this will passthrough all non-boot VGA devi
 ## Update our boot system
 
 ```bash
-# update initrd
+# update initramfs
 # or dracut -f --regenerate-all
 dracut -f --kver $(uname -r)
 
