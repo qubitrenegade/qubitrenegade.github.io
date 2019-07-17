@@ -121,4 +121,5 @@ grub2-mkconfig > /etc/grub2-efi.cfg
 * [Cybercity `nmcli` guide](https://www.cyberciti.biz/faq/how-to-add-network-bridge-with-nmcli-networkmanager-on-linux/)
 * [Arch Linux VFIO Wiki](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF)
 * [VFIO Blogspot](http://vfio.blogspot.com/2015/05/vfio-gpu-how-to-series-part-3-host.html)
+* [Level1Techs "Play games in Windows on Linux!"](https://forum.level1techs.com/t/play-games-in-windows-on-linux-pci-passthrough-quick-guide/108981), however, they are mistaken you need different GPUs.
 * [script gist](https://gist.github.com/qubitrenegade/2ff70cc63346a09c2374262e1075564c)
