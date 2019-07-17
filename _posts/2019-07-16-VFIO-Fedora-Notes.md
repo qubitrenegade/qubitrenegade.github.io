@@ -7,6 +7,8 @@ categories: Virtualization KVM VFIO
 
 GPU Passthrough is all the rage.  The ArchLinux Wiki does an amazing job explaining all the different ways to setup VFIO/GPU passthrough.  These are my notes for setting up GPU Passthrough in Fedora 30 with two identical cards.  This does not aim to be a comprehensive guide.
 
+I belive, while untested, this method can be used for setups with a different cards as well.
+
 ## Setup KVM
  
 Install KVM
@@ -75,29 +77,6 @@ install_items+="/sbin/vfio-pci-override.sh /usr/bin/dirname"
 Create `/sbin/vfio-pci-override.sh`, this will passthrough all non-boot VGA devices, including audio and USB controllers if they exist.
 
 {% gist 2ff70cc63346a09c2374262e1075564c vfio-pci-override.sh %}
-
-```bash
-!/bin/sh
-
-set -u
-
-for boot_vga in /sys/bus/pci/devices/*/boot_vga; do
-  echo "Found vga device: ${boot_vga}"
-  if [ $(<"${boot_vga}") -eq 0 ]; then
-    echo "Found Boot VGA Device - false: ${boot_vga}"
-    
-    dir=$(dirname -- "${boot_vga}")
-    for dev in "${dir::-1}"*; do
-      echo "Registering Devices: ${dev}"
-      echo 'vfio-pci' > "${dev}/driver_override"
-    done
-  else
-    echo "Found Boot VGA Device - true: ${boot_vga}"
-  fi
-done
-
-modprobe -i vfio-pci
-```
 
 ## Update our boot system
 
