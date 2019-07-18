@@ -95,6 +95,52 @@ grub2-mkconfig > /etc/grub2-efi.cfg
 
 (this could be improved)
 
+## "failed to setup container for group XX: failed to set iommu for container: Operation not permitted"
+
+Shoutout to [/u/degerdem and /u/WiFivomFranman](https://www.reddit.com/r/VFIO/comments/70qneu/threadripper_failed_to_set_iommu_for_container/dn62wyj/?context=2) for identifying that you need to go into the BIOS
+
+* Advanced -> AMD PBS
+** Enumberate all IOMMU in IVRS = Enabled
+
+## NVidia Geforce Card reports Error 43 in Guest OS
+
+In the `<features></features>` stanza,  add `  <vendor_id state='on' value='10DE'/>` to the `hyperv` block and `hidden state=on`.
+
+Before:
+
+```
+  <features>
+    <acpi/>
+    <apic/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='8191'/>
+    </hyperv>
+    <vmport state='off'/>
+  </features>
+```
+
+After:
+
+```
+  <features>
+    <acpi/>
+    <apic/>
+    <hyperv>
+      <relaxed state='on'/>
+      <vapic state='on'/>
+      <spinlocks state='on' retries='8191'/>
+      <vendor_id state='on' value='10DE'/>
+    </hyperv>
+    <kvm>
+      <hidden state='on'/>
+    </kvm>
+    <vmport state='off'/>
+  </features>
+  ```
+
+
 ## Links
 
 * [Cybercity `nmcli` guide](https://www.cyberciti.biz/faq/how-to-add-network-bridge-with-nmcli-networkmanager-on-linux/)
