@@ -9,6 +9,9 @@ ROUGH outline of things to come
 
 
    # Packages, we need some stinking pakcages
+   add-apt-repository ppa:certbot/certbot
+   add-apt-repository universe
+   
    wget -O /usr/share/keyrings/matrix-org-archive-keyring.gpg https://packages.matrix.org/debian/matrix-org-archive-keyring.gpg
    sh -c 'echo "deb [signed-by=/usr/share/keyrings/matrix-org-archive-keyring.gpg] https://packages.matrix.org/debian/ $(lsb_release -cs) main" |     sudo tee /etc/apt/sources.list.d/matrix-org.list'
    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -173,7 +176,7 @@ server {
 }
 ```
 
-    
+    certbot --nginx
     
 
 
