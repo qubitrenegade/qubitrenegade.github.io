@@ -8,7 +8,9 @@ categories: matrix synapse riot privacy chat
 ROUGH outline of things to come
 
 
-   # Packages, we need some stinking pakcages
+# Packages, we need some stinking pakcages
+
+```
    add-apt-repository ppa:certbot/certbot
    add-apt-repository universe
    
@@ -18,7 +20,7 @@ ROUGH outline of things to come
    sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
    apt install matrix-synapse-py3 nginx certbot python-certbot-nginx matrix-synapse-py3 postgresql postgresql-contrib
    # common or contrib you decide: https://stackoverflow.com/questions/37128058/difference-between-postgresql-common-and-postgresql-contrib
-
+```
 
 
 ## Set things up
