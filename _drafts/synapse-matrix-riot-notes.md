@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Configuring GPU Passthrough with VFIO on Fedora 30 notes"
+title:  "Configuring Matrix and Riot for private Chat"
 date:   2019-07-16 19:38:21 -0700
 categories: matrix synapse riot privacy chat
 ---
@@ -92,14 +92,27 @@ server {
     server_name qbrd.cc
                 www.qbrd.cc;
 
-    location /.well-known/matrix/server {
+    location /.well-known/matrix/ {
         add_header 'Content-Type' 'application/json';
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
+
         autoindex on;
+        autoindex_exact_size on;
+        autoindex_format json;
+        autoindex_localtime on;
     }
 
-    location /_matrix {
-        return 301 https://matrix.qbrd.cc$request_uri;
-    }
+    # location /.well-known/matrix/server {
+    #     add_header 'Content-Type' 'application/json';
+    #     autoindex on;
+    # }
+
+    # location /_matrix {
+    #     return 301 https://matrix.qbrd.cc$request_uri;
+    # }
 
     location / {
         # First attempt to serve request as file, then
@@ -134,9 +147,10 @@ server {
                 _;
     return 404; # managed by Certbot
 }
+
 # /etc/nginx/sites-enabled/matrix
 server {
-  gzip on;
+  gzip off;
 
   server_name matrix.qbrd.cc;
   location / {
@@ -178,8 +192,98 @@ server {
 }
 ```
 
+```
+# cat /var/www/html/.well-known/matrix/client 
+{
+    "m.homeserver": {
+        "base_url": "https://matrix.qbrd.cc"
+    },
+    "m.identity_server": {
+        "base_url": "https://vector.im"
+    }
+}
+```
+
     certbot --nginx
     
+### Riot App
+
+Download to `/var/www/riot-version`, link to `/var/www/riot`
+
+```
+{
+    "default_server_config": {
+        "m.homeserver": {
+            "base_url": "https://matrix.qbrd.cc",
+            "server_name": "qbrd.cc"
+        },
+        "m.identity_server": {
+            "base_url": "https://vector.im"
+        }
+    },
+    "disable_identity_server": true,
+    "disable_custom_urls": false,
+    "disable_guests": false,
+    "disable_login_language_selector": false,
+    "disable_3pid_login": true,
+    "brand": "QBRD - Riot",
+    "branding": {
+      "welcomeBackgroundUrl": "img/custom/bg-stars.jpg"
+    },
+    "integrations_ui_url": "https://scalar.vector.im/",
+    "integrations_rest_url": "https://scalar.vector.im/api",
+    "integrations_jitsi_widget_url": "https://scalar.vector.im/api/widgets/jitsi.html",
+    "bug_report_endpoint_url": "https://riot.im/bugreports/submit",
+    "defaultCountryCode": "US",
+    "showLabsSettings": true,
+    "features": {
+        "feature_groups": "labs",
+        "feature_pinning": "labs"
+    },
+    "default_federate": true,
+    "default_theme": "dark",
+    "roomDirectory": {
+        "servers": [
+            "matrix.qbrd.cc"
+        ]
+    },
+    "welcomeUserId": "@riot-bot:matrix.org",
+    "piwik": {
+        "url": "https://piwik.riot.im/",
+        "whitelistedHSUrls": ["https://matrix.org"],
+        "whitelistedISUrls": ["https://vector.im", "https://matrix.org"],
+        "siteId": 1
+    },
+    "enable_presence_by_hs_url": {
+        "https://matrix.org": false
+    }
+}
+```
+
+## Setup TURN server, coturn
+
+```
+# cat /etc/turnserver.conf 
+listening-port=3478
+tls-listening-port=5349
+listening-ip=IPv6
+listening-ip=IPv4
+listening-ip=IPv4local-address
+use-auth-secret
+static-auth-secret=<generated password>
+server-name=turn.qbrd.cc
+realm=turn.qbrd.cc
+user-quota=12
+total-quota=1200
+no-tcp-relay
+cert=/etc/letsencrypt/live/qbrd.cc/fullchain.pem
+pkey=/etc/letsencrypt/live/qbrd.cc/privkey.pem
+dh-file=/etc/letsencrypt/ssl-dhparams.pem
+denied-peer-ip=10.0.0.0-10.255.255.255
+denied-peer-ip=192.168.0.0-192.168.255.255
+denied-peer-ip=172.16.0.0-172.31.255.255
+allowed-peer-ip=IPv4local-address
+``` 
 
 
 ## Reference
@@ -190,5 +294,5 @@ server {
 * 3 - [PgSQL Apt setup](https://wiki.postgresql.org/wiki/Apt)
 * 3 - [PgSQL Setup](https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst)
 * x - [Federation](https://github.com/matrix-org/synapse/blob/master/docs/federate.md)
-* x - [Ubuntu Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx.html
+* x - [Ubuntu Certbot](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx.html)
 
