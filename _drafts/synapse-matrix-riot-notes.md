@@ -7,7 +7,6 @@ categories: matrix synapse riot privacy chat
 
 ROUGH outline of things to come
 
-
 # Packages, we need some stinking pakcages
 
 ```
