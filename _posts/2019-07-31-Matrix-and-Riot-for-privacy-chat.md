@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Configuring Matrix and Riot for private Chat"
-date:   2019-07-16 19:38:21 -0700
+date:   2019-07-331 19:38:21 -0700
 categories: matrix synapse riot privacy chat
 ---
 
