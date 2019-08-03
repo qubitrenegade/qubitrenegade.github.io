@@ -10,7 +10,7 @@
 
 /* Code */
 .gist-data tbody td:nth-of-type(2){
-  color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
 /* Comments */
