@@ -1,0 +1,3 @@
+mkdir -p ~/dev/kernel/build && cd "$_"
+git clone -b linux-5.2.y git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+docker run -it --name kernel-build --mount type=bind,source="${HOME}/dev/kernel",target=/kernel fedora:30
