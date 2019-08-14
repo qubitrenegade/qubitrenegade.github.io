@@ -51,10 +51,11 @@ Gist of Current Kernel config: https://gist.github.com/qubitrenegade/c93e656a6fe
 Going to try the following:
 
 ```
-perl -pi -e 's/^(CONFIG_(:?.*_)?.*DEBUG(:?_.*)?)/# \1/' .config
-perl -pi -e 's/^(CONFIG_(:?.*)?.*INTEL(:?.*)=)(?:.)/\1n/' .config
-
+perl -pi -e 's/^(CONFIG(:?.*)?.*(DEBUG|INTEL)(:?.*)?)=(.)/\1=n/' .config
+make olddefconfig
+KCFLAGS='-O3 -mtune=cpu-type -march=cpu-type -pipe' KCPPFLAGS='-O3 -mtune=cpu-type -march=cpu-type -pipe' make -j$(nproc) rpm-pkg
 ```
+
 
 
 
