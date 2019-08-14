@@ -53,7 +53,7 @@ Going to try the following:
 ```
 perl -pi -e 's/^(CONFIG(:?.*)?.*(DEBUG|INTEL)(:?.*)?)=(.)/\1=n/' .config
 make olddefconfig
-KCFLAGS='-O3 -mtune=cpu-type -march=cpu-type -pipe' KCPPFLAGS='-O3 -mtune=cpu-type -march=cpu-type -pipe' make -j$(nproc) rpm-pkg
+KCFLAGS='-O3 -mtune=native -march=native -pipe' KCPPFLAGS='-O3 -mtune=cpu-type -march=cpu-type -pipe' make -j$(nproc) rpm-pkg
 ```
 
 
