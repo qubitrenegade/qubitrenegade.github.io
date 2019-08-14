@@ -48,8 +48,35 @@ Gist of Current Kernel config: https://gist.github.com/qubitrenegade/c93e656a6fe
 * "disable 'NZ'" and legacy NZ (I forget the specific option)
 * disable bunch of Intel options (though, not all?), since we're on an AMD proc...
 
+
+```
+# Add name to make install easier
+
+3c3
+< # Linux/x86 5.2.8 Kernel Configuration
+---
+> # Linux/x86_64 5.2.7-200.fc30.x86_64 Kernel Configuration
+23,24c23,24
+< CONFIG_LOCALVERSION="-local"
+< CONFIG_LOCALVERSION_AUTO=y
+
+
+
+
+
+
+```
+
 TODO:
 
 * minimize kernel size...  atleast for now, hardware isn't going to change... maybe add another drive...
 
+
+docker start kernel-build
+docker exec -it kernel-build bash
+docker stop kernel-build
+
 THIS IS STILL A DRAFT!!! So ya.
+
+
+
