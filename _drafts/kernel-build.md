@@ -48,6 +48,15 @@ Gist of Current Kernel config: https://gist.github.com/qubitrenegade/c93e656a6fe
 * "disable 'NZ'" and legacy NZ (I forget the specific option)
 * disable bunch of Intel options (though, not all?), since we're on an AMD proc...
 
+Going to try the following:
+
+```
+perl -pi -e 's/^(CONFIG_(:?.*_)?.*DEBUG(:?_.*)?)/# \1/' .config
+perl -pi -e 's/^(CONFIG_(:?.*)?.*INTEL(:?.*)=)(?:.)/\1n/' .config
+
+```
+
+
 
 ```
 # Add name to make install easier
