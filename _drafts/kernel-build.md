@@ -10,3 +10,5 @@ make olddefconfig
 make menuconfig
 KCFLAGS='-O3 -mtune=native -pipe' KCPPFLAGS='-O3 -mtune=native -pipe' make -j$(nproc) rpm-pkg
 ```
+
+Gist of Current Kernel config: https://gist.github.com/qubitrenegade/c93e656a6fe1dd4f2e01aead3bebd2b4
