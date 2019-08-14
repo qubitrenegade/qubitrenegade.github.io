@@ -61,7 +61,12 @@ error
 ```
 KCFLAGS='-O3 -march=native -pipe' KCPPFLAGS='-O3 5~-march=cpu-type -pipe' make -j$(nproc) rpm-pkg
 ```
-....
+
+Copy pasing helps! lol
+
+...
+KCFLAGS='-O3 -mtune=native -march=native -pipe' KCPPFLAGS='-O3 -mtune=native -march=native -pipe' make -j$(nproc) rpm-pkg
+```
 
 
 ```
