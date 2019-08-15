@@ -79,12 +79,6 @@ KCFLAGS='-O3 -mtune=native -march=native -pipe' KCPPFLAGS='-O3 -mtune=native -ma
 23,24c23,24
 < CONFIG_LOCALVERSION="-local"
 < CONFIG_LOCALVERSION_AUTO=y
-
-
-
-
-
-
 ```
 
 TODO:
