@@ -36,7 +36,7 @@ dnf install fedpkg fedora-packager rpmdevtools ncurses-devel pesign qt3-devel li
 cd /kernel/build
 make olddefconfig
 make menuconfig
-KCFLAGS='-O3 -mtune=native -pipe' KCPPFLAGS='-O3 -mtune=native -pipe' make -j$(nproc) rpm-pkg
+KCFLAGS='-O3 -mtune=native -pipe' KCPPFLAGS='-O3 -mtune=native -pipe' make -j$(nproc) rpm-pkg LOCALVERSION="_$(date +%s)"
 ```
 
 Uhh... you really shouldn't use this... but it's provided as refence...  I'd like to get into the specifics of what I did but haven't yet...
