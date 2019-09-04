@@ -16,7 +16,6 @@ categories: start
     Jan 21 12:54:53 local systemd[1]: Starting dracut pre-pivot and cleanup hook...
 {% endhighlight %}
 
-{% github_sample_ref /qubitrenegade/certbot-exec/blob/master/resources/certbot_cmd.rb %}
 {% highlight ruby %}
 {% github_sample /qubitrenegade/certbot-exec/blob/master/resources/certbot_cmd.rb 9 19 %}
 {% endhighlight %}
