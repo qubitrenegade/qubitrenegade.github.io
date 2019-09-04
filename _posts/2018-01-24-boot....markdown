@@ -18,8 +18,6 @@ categories: start
 
 Try including via "script":
 
-{% highlight ruby %}
 <script src="https://gist.githubusercontent.com/qubitrenegade/2ff70cc63346a09c2374262e1075564c/raw/3c2d08dcac19f5d5cfbee2453b656417bbb8edd8/vfio-pci-override.sh"> </script>
-{% endhighlight %}
 
 This thing on?
