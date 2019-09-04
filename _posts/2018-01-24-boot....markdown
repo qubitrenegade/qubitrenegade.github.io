@@ -16,4 +16,10 @@ categories: start
     Jan 21 12:54:53 local systemd[1]: Starting dracut pre-pivot and cleanup hook...
 {% endhighlight %}
 
+{% https://github.com/qubitrenegade/certbot-exec/blob/master/resources/certbot_cmd.rb 9 19 %}
+
+{% highlight ruby %}
+<script src="https://gist.githubusercontent.com/qubitrenegade/2ff70cc63346a09c2374262e1075564c/raw/3c2d08dcac19f5d5cfbee2453b656417bbb8edd8/vfio-pci-override.sh"> </script>
+{% endhighlight %}
+
 This thing on?
