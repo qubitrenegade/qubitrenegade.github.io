@@ -78,6 +78,10 @@ Create `/sbin/vfio-pci-override.sh`, this will passthrough all non-boot VGA devi
 
 {% gist 2ff70cc63346a09c2374262e1075564c vfio-pci-override.sh %}
 
+```bash
+<script src="https://gist.githubusercontent.com/qubitrenegade/2ff70cc63346a09c2374262e1075564c/raw/3c2d08dcac19f5d5cfbee2453b656417bbb8edd8/vfio-pci-override.sh"> </script>
+```
+
 ## Update our boot system
 
 ```bash
