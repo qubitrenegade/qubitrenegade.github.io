@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Chef - Inversion of Control/Responsibility: letting other sweat the details"
-date:   2018-09-05 12:13:57 -0700
+date:   2019-09-15 12:13:57 -0700
 categories: Chef IoC
 ---
 
