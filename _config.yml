@@ -21,6 +21,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://qubitrenegade.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: qubitrenegade
 github_username: qubitrenegade
+gitlab_username: qubitrenegade
 
 permalink: date
 
@@ -33,10 +34,12 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll_github_sample
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
+exclude:
+  - README.md
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
